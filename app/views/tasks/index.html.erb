@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+
+<div class="form-check">
+  <% @tasks.each do |task| %>
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    <%= link_to task.title, task_path(task) %>
+    <label class="form-check-label" for="defaultCheck1">
+    </label>
+    <%= link_to destroy_path(task), method: :destroy do %>
+         <i class="fas fa-trash-alt"></i>
+       <% end %>
+  <p><%= link_to 'Editer une tâche', edit_task_path(task) %></p>
+<% end %>
+</div>
+
+<p><%= link_to 'Ajouter une nouvelle tâche', new_path %></p>
